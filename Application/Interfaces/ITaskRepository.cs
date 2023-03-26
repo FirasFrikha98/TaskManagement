@@ -11,9 +11,12 @@ namespace TaskManagement.Application.Interfaces
     public interface ITaskRepository 
     {
         List<Tasks> GetAllTasks();
-        void modifyTask(int id, String Text, DateTime datetime);
-        void removeTask(Tasks task);
+        /*void modifyTask(int id, String Text, DateTime datetime);
 
+        void removeTask(Tasks task);
+        */
         Tasks CreateTask(Tasks task);
+
+        void DeleteTask(int id);
     }
 }

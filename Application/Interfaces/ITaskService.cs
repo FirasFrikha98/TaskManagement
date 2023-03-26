@@ -11,10 +11,12 @@ namespace TaskManagement.Application.Interfaces
     {
         List<Tasks> GetAllTasks();
 
-        void removeTask(Tasks task);
+       /* void removeTask(Tasks task);
 
-        void modifyTask(int id, String Text, DateTime datetime);
+        void modifyTask(int id, String Text, DateTime datetime);*/
 
         Tasks CreateTasks(Tasks tasks);
+
+        public void DeleteTask(int id);
     }
 }

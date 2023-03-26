@@ -29,7 +29,12 @@ namespace TaskManagement.Application.Services
             return tasks;
         }
 
-        public void modifyTask(int id, String Text, DateTime datetime)
+        public void DeleteTask(int id) 
+        {
+           _taskRepository.DeleteTask(id);
+        }
+
+       /* public void modifyTask(int id, String Text, DateTime datetime)
         {
             _taskRepository.modifyTask(id,Text,datetime);
         }
@@ -37,6 +42,6 @@ namespace TaskManagement.Application.Services
         public void removeTask(Tasks task)
         {
             _taskRepository.removeTask(task);
-        }
+        }*/
     }
 }

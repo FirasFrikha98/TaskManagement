@@ -6,7 +6,7 @@ namespace TaskManagement.Infrastructure
 {
     public class TaskRepository : ITaskRepository
     {
-        public static List<Tasks> tasks = new List<Tasks>()
+       /* public static List<Tasks> tasks = new List<Tasks>()
         {
             new Tasks
             {
@@ -22,13 +22,13 @@ namespace TaskManagement.Infrastructure
                 dateTime = new DateTime(2023,03,10,22,00,00)
 
             }
-        };
+        };*/
         private readonly TaskDbContext _taskDbContex;
 
-        public void Add(Tasks task)
+        /*public void Add(Tasks task)
         {
             tasks.Add(task);
-        }
+        }*/
 
         public TaskRepository(TaskDbContext taskDbContext)
         {
@@ -47,15 +47,23 @@ namespace TaskManagement.Infrastructure
                  
         }
 
-        public void modifyTask(int id, String Text, DateTime datetime)
+        public void DeleteTask(int id)
         {
-            tasks[id].Text = Text;
-            tasks[id].dateTime = datetime;
+            var taskk = _taskDbContex.Tasks.FirstOrDefault(t => t.Id == id);
+
+            _taskDbContex.Remove(taskk);
+            _taskDbContex.SaveChanges() ;
         }
 
-        public void removeTask(Tasks task)
-        {
-            tasks.Remove(task);
-        }
+        /* public void modifyTask(int id, String Text, DateTime datetime)
+         {
+             tasks[id].Text = Text;
+             tasks[id].dateTime = datetime;
+         }*/
+
+        /* public void removeTask(Tasks task)
+         {
+             tasks.Remove(task);
+         }*/
     }
 }

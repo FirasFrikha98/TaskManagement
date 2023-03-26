@@ -22,11 +22,20 @@ namespace TaskManagement.Presentation.Controllers
             var taskslist = _service.GetAllTasks();
             return Ok(taskslist);
         }
+
         [HttpPost]
         public ActionResult<Tasks> PostTasks(Tasks task) {
         var tasks = _service.CreateTasks(task);
             return Ok(tasks);
         }
+        [HttpDelete]
+        public ActionResult Delete(int id)
+        {
+            _service.DeleteTask(id);
+            Console.WriteLine(id);
+            return Ok();
+        }
+
 
     }
 }
