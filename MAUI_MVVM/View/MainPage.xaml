@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    x:Class="MAUI_MVVM.View.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:model="clr-namespace:MAUI_MVVM.Model">
+
+
+    <CollectionView>
+        <CollectionView.ItemsSource>
+            <x:Array Type="{x:Type model:TaskModel}">
+                <model:TaskModel
+                    Id="1"
+                    Text="Cleaning my room"
+                    dateTime='2010-06-01T00:00:00'/>
+                <model:TaskModel
+                    Id="2"
+                    Text="Learning C#"
+                    dateTime='2011-06-01T00:00:00'/>
+            </x:Array>
+        </CollectionView.ItemsSource>
+        <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:TaskModel">
+                    <HorizontalStackLayout Padding="10">
+                        <Label VerticalOptions="Center">
+                            <Label.Text>
+                                <MultiBinding StringFormat="{}{0} | {1}">
+                                    <Binding Path="Text" />
+                                    <Binding Path="dateTime"/>
+                                </MultiBinding>
+                            </Label.Text>
+                        </Label>
+                    </HorizontalStackLayout>
+                </DataTemplate>
+         </CollectionView.ItemTemplate>
+    </CollectionView>
+</ContentPage>
