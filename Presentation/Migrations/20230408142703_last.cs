@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Presentation.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialMigration : Migration
+    public partial class last : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -24,6 +24,7 @@ namespace Presentation.Migrations
                 {
                     table.PrimaryKey("PK_Tasks", x => x.Id);
                 });
+            migrationBuilder.Sql("SET IDENTITY_INSERT Tasks ON");
         }
 
         /// <inheritdoc />

@@ -14,12 +14,13 @@ namespace MAUI_MVVM.Services
         public TaskService()
         {
             this.httpClient = new HttpClient();
+            this._jsonSerializerOptions = new JsonSerializerOptions();
         }
         public async Task<List<TaskModel>> GetTasks()
         {
             if(tasks.Count > 0)
               return tasks;
-            var response = await httpClient.GetAsync("http://localhost:9521/TaskManagement");
+            var response = await httpClient.GetAsync("https://localhost:7070/api/Tasks");
 
             if(response.IsSuccessStatusCode)
             {

@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastru
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Presentation", "Presentation\Presentation.csproj", "{FC0C6FF8-86D1-421E-9BB5-1C5DEBA7A26E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAUI_MVVM", "MAUI_MVVM\MAUI_MVVM.csproj", "{53BB7A67-C49F-41A3-8B6F-9E098B556C8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MAUI_MVVM", "MAUI_MVVM\MAUI_MVVM.csproj", "{53BB7A67-C49F-41A3-8B6F-9E098B556C8B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

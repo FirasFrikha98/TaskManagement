@@ -14,6 +14,7 @@ namespace MAUI_MVVM.ViewModel
         public TaskViewModel()
         {
             Title = "To do tasks";
+            taskservice = new TaskService();
         }
         [RelayCommand]
         async Task GetTaskssAsync()
